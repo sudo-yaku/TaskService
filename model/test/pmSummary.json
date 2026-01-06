@@ -1,0 +1,12 @@
+{
+  "pmtaskscounts": [
+    {
+      "techid": "v123456",
+      "pmtasks": "17"
+    },
+    {
+      "techid": "v456789",
+      "pmtasks": "17"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+    "opsTrackerService": {
+        "url": "http://txslpmtkpa5v.nss.vzwnet.com/c2/api/rest/getList.php",
+        "updateUrl" : "http://txslpmtkpa5v.nss.vzwnet.com/c2/api/rest/record.php",
+        "pmTaskUpdateUrl" : "http://txslpmtkpa5v.nss.vzwnet.com/c2/API/vzw/putPMActual.php",
+        "wws_url": "http://txslpmtkpa5v.nss.vzwnet.com/c2/HTML/VZW/html_wws2017.php?cfd_onloadunid=",
+        "task_form_url": "http://txslpmtkpa5v.nss.vzwnet.com/c2/HTML/VZW/html_task.php?cfd_onloadunid=",
+        "port":80
+    },
+    "app" : {
+        "port" : 5004,
+        "authHeader" : "Basic V0lOLVZaV05FVFxTLWlvcDp3b1JEMjk1IQ==",
+        "authEnabled" : false,
+        "userRefreshInterval" : 30000,
+        "gcInterval" : 3600000,
+        "env": "default",
+        "userServiceRefreshInterval" : 30000
+    },
+    "log":{
+        "filePath" : "/usr/apps/iop/apps/logs/taskservice.log",
+        "level" : "debug"
+    },
+    "userService" : {
+        "url" : "http://txsliopda2v.nss.vzwnet.com:8080/user/"
+    },
+    "cacheService":{
+      "url" : "http://localhost:8080/cache/",
+      "enabled" : true
+    },
+    "cache":{
+        "url" : "http://localhost:8080/cache/",
+        "enabled" : true
+    },
+    "contactService": {
+      "url": "http://localhost:8080/contact/"
+    },
+    "taskService" : {
+        "url" : "http://localhost:8080/task/"
+    },
+    "siteService": {
+        "url": "http://localhost:8080/site/"
+    },
+    "rcmService" : {
+        "url" : "http://localhost:8080/rcmengine/"
+    },
+    "dbService" : {
+        "url" : "http://localhost:8080/db/"
+    },
+    "directiveService" : {
+        "url":"http://localhost:8080/directive-service",
+        "isEnabled" : true
+    },
+    "switchService" : {
+        "url" : "http://localhost:8080/switch/"
+    },
+    "auth" : {
+        "secret" : "secret",
+        "ttl" : 3600 
+    },
+    "generator" :{
+        "info" : "http://txslpmtkpa4v.nss.vzwnet.com/C2/API/VZW/getGenInfo.php",
+        "level" : "http://txslpmtkpa4v.nss.vzwnet.com/c2/API/REST/getkeyworddata.php?name=GEN_FUELLEVEL,GEN_OILLEVEL",
+        "updateUrl" : "http://txslpmtkpa4v.nss.vzwnet.com/C2/API/VZW/genReadings.php"
+    },
+    "sentryDSN" : "https://5982aaf069bb419cb1572b12cf7b50cb@sentry.ebiz.verizon.com/4028",
+    "sentryEnabledServers" : "txsliopsa1v,txsliopda2v",
+    "pmDirectiveService":{
+        "url": "http://txslonpda1v.nss.vzwnet.com:19116"
+    },
+    "timeout": {
+        "requestTimeout": 30000,
+        "responseTimeout": 30000
+    },
+    "gsamDetailsFilePath" : "/usr/apps/iop/gsam_details/gsam_sensitive_dictionary.json"
+}

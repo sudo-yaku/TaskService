@@ -1,0 +1,69 @@
+{
+    "opsTrackerService": {
+        "url": "https://opstracker-api.eng.vzwcorp.com/c2/api/rest/getList.php",
+        "updateUrl" : "https://opstracker-api.eng.vzwcorp.com/c2/api/rest/record.php",
+        "pmTaskUpdateUrl" : "https://opstracker-api.eng.vzwcorp.com/c2/API/vzw/putPMActual.php",
+        "wws_url": "http://opstracker.eng.vzwcorp.com/c2/HTML/VZW/html_wws2017.php?cfd_onloadunid=",
+        "task_form_url": "http://opstracker.eng.vzwcorp.com/c2/HTML/VZW/html_task.php?cfd_onloadunid=",
+        "port":80
+    },
+    "app" : {
+        "port" : 5004,
+        "authHeader" : "Basic cy1pb3AyOlYlYzIkTjc1dQ==",
+        "authEnabled" : false,
+        "userRefreshInterval" : 30000,
+        "gcInterval" : 3600000
+    },
+    "log":{
+        "filePath" : "/usr/apps/iop/apps/logs/taskservice.log",
+        "level" : "debug"
+    },
+    "userService" : {
+        "url" : "http://localhost:8080/user/"
+    },
+    "cacheService":{
+      "url" : "https://iop-pilot.nss.vzwnet.com:8082/cache/",
+      "enabled" : true
+    },
+    "contactService": {
+      "url": "http://localhost:8080/contact/"
+    },
+    "taskService" : {
+      "url" : "http://localhost:8080/task/"
+    },
+    "siteService": {
+        "url": "http://localhost:8080/site/"
+    },
+    "rcmService" : {
+        "url" : "http://localhost:8080/rcmengine/"
+    },
+    "dbService" : {
+        "url" : "http://localhost:8080/db/"
+    },
+    "directiveService" : {
+        "url":"http://localhost:8080/directive-service",
+        "isEnabled" : false
+    },
+    "switchService" : {
+        "url" : "http://localhost:8080/switch/"
+    },
+    "auth" : {
+        "secret" : "secret",
+        "ttl" : 3600 
+    },
+    "generator" :{
+        "info" : "https://opstracker-api.eng.vzwcorp.com/C2/API/VZW/getGenInfo.php",
+        "level" : "https://opstracker-api.eng.vzwcorp.com/c2/API/REST/getkeyworddata.php?name=GEN_FUELLEVEL,GEN_OILLEVEL",
+        "updateUrl" : "https://opstracker-api.eng.vzwcorp.com/C2/API/VZW/genReadings.php"
+    },
+    "sentryDSN" : "https://67eadfb8daf14914a6485eb224f92cdf@sentry.verizon.com/1587",
+    "sentryEnabledServers" : "cospioppa1v,cospioppa2v,cospioppa4v",
+    "pmDirectiveService":{
+        "url": "http://txslonppa1v.nss.vzwnet.com:19116"
+    },
+    "timeout": {
+        "requestTimeout": 30000,
+        "responseTimeout": 30000
+    },
+    "gsamDetailsFilePath" : "/usr/apps/iop/gsam_details/gsam_sensitive_dictionary.json"
+}

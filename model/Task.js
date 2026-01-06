@@ -1,0 +1,85 @@
+global.config = require('config')
+var Task = function(obj){
+    
+    if( obj === undefined ) return construct();
+    this.cfd_checklist_url = obj.cfd_checklist_url;
+    this.is_editable = "yes",
+    this.cfd_completed_on_date = obj.cfd_completed_on_date,
+    this.cfd_completed_on_time = obj.cfd_completed_on_time,
+    this.cfd_original_iscompleted = obj.cfd_original_iscompleted,
+    this.cfd_original_status = obj.cfd_original_status,
+    this.cfd_performer_name = obj.cfd_performer_name,
+    this.cfd_tr_area = obj.cfd_tr_area,
+    this.cfd_tr_body = obj.cfd_tr_body,
+    this.cfd_tr_category = obj.cfd_tr_category,
+    this.cfd_tr_cfd_requestor_name = obj.cfd_tr_cfd_requestor_name,
+    this.cfd_tr_duedatetime = obj.cfd_tr_duedatetime,
+    this.cfd_tr_hidden_udf_3 = obj.cfd_tr_hidden_udf_3,
+    this.cfd_tr_includelink = obj.cfd_tr_includelink,
+    this.cfd_tr_keep_synced = obj.cfd_tr_keep_synced,
+    this.cfd_tr_keywords = obj.cfd_tr_keywords,
+    this.cfd_tr_linkpath = obj.cfd_tr_linkpath,
+    this.cfd_tr_linkto_key1 = obj.cfd_tr_linkto_key1,
+    this.cfd_tr_linkto_type = obj.cfd_tr_linkto_type,
+    this.cfd_tr_market = obj.cfd_tr_market,
+    this.cfd_tr_meta_createdby = obj.cfd_tr_meta_createdby,
+    this.cfd_tr_meta_createddate = obj.cfd_tr_meta_createddate,
+    this.cfd_tr_meta_lastupdateby = obj.cfd_tr_meta_lastupdateby,
+    this.cfd_tr_meta_lastupdatedate = obj.cfd_tr_meta_lastupdatedate,
+    this.cfd_tr_meta_universalid = obj.cfd_tr_meta_universalid,
+    this.cfd_tr_notify_performer = obj.cfd_tr_notify_performer,
+    this.cfd_tr_notify_requestor = obj.cfd_tr_notify_requestor,
+    this.cfd_tr_performer_type = obj.cfd_tr_performer_type,
+    this.cfd_tr_region = obj.cfd_tr_region,
+    this.cfd_tr_requestor_id = obj.cfd_tr_requestor_id,
+    this.cfd_tr_startdatetime = obj.cfd_tr_startdatetime,
+    this.cfd_tr_status = obj.cfd_tr_status,
+    this.cfd_tr_taskname = obj.cfd_tr_taskname,
+    this.cfd_tr_taskperelement = obj.cfd_tr_taskperelement,
+    this.cfd_tr_taskrequest_id = obj.cfd_tr_taskrequest_id,
+    this.cfd_tr_udf_numeric_1_label = obj.cfd_tr_udf_numeric_1_label,
+    this.cfd_tr_udf_numeric_1_required = obj.cfd_tr_udf_numeric_1_required,
+    this.cfd_tr_udf_numeric_2_label = obj.cfd_tr_udf_numeric_2_label,
+    this.cfd_tr_udf_numeric_2_required = obj.cfd_tr_udf_numeric_2_required,
+    this.cfd_tr_udf_text_1_choices = obj.cfd_tr_udf_text_1_choices,
+    this.cfd_tr_udf_text_1_label = obj.cfd_tr_udf_text_1_label,
+    this.cfd_tr_udf_text_1_required = obj.cfd_tr_udf_text_1_required,
+    this.cfd_tr_udf_text_2_choices = obj.cfd_tr_udf_text_2_choices,
+    this.cfd_tr_udf_text_2_label = obj.cfd_tr_udf_text_2_label,
+    this.cfd_tr_udf_text_2_required = obj.cfd_tr_udf_text_2_required,
+    this.checklist_unid = obj.checklist_unid,
+    this.completed_by = obj.completed_by,
+    this.completed_on = obj.completed_on,
+    this.iscompleted = obj.iscompleted,
+    this.last_email_sent = obj.last_email_sent,
+    this.linkto_type = obj.linkto_type,
+    this.marked_completed_by = obj.marked_completed_by,
+    this.marked_completed_on = obj.marked_completed_on,
+    this.meta_createdby = obj.meta_createdby,
+    this.meta_createddate = obj.meta_createddate,
+    this.meta_lastupdateby = obj.meta_lastupdateby,
+    this.meta_lastupdatedate = obj.meta_lastupdatedate,
+    this.task_unid = obj.meta_universalid,
+    this.performer_comments = obj.performer_comments,
+    this.performer_group_id = obj.performer_group_id,
+    this.performer_id = obj.performer_id,
+    this.status = obj.status,
+    this.taskid = obj.taskid,
+    this.taskrequest_id = obj.taskrequest_id,
+    this.time_spent = obj.time_spent,
+    this.udf_numeric_1 = obj.udf_numeric_1,
+    this.udf_numeric_2 = obj.udf_numeric_2,
+    this.udf_text_1 = obj.udf_text_1,
+    this.udf_text_2 = obj.udf_text_2
+    let category = this.cfd_tr_category ? this.cfd_tr_category : "";
+    if(category.indexOf("RESERVED_") >= 0){
+        this.is_editable = "no",
+        this.task_url = config.opsTrackerService.task_form_url + this.task_unid;
+        this.link_text = "Open form in Ops-Tracker";
+    }
+};
+
+var construct = function(){
+}
+
+module.exports = Task;
