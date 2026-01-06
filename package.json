@@ -1,0 +1,48 @@
+{
+  "name": "task-svc",
+  "version": "1.0.0",
+  "description": "task service provides APIs to query/manage tasks, directives, PMs in OpsTracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --all --reporter=clover --reporter=text-lcov --reporter=lcov  mocha --reporter mocha-sonarqube-reporter \"./{,!(node_modules)/**/}*.test.js\" --reporter-options output=coverage/test-reporter.xml  ",
+    "test-cover": "nyc --reporter=html mocha \"./{,!(node_modules)/**/}*.test.js\" --recursive",
+    "staging": "cross-env SERVICE=taskservice NODE_ENV=staging UV_THREADPOOL_SIZE=32 node index.js",
+    "prod": "cross-env SERVICE=taskservice NODE_ENV=prod UV_THREADPOOL_SIZE=32 node index.js",
+    "dev": "cross-env SERVICE=taskservice NODE_ENV=dev UV_THREADPOOL_SIZE=32 node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@iop/ms-corelib": "1.0.12",
+    "@sentry/node": "^6.16.1",
+    "async": "^2.6.1",
+    "axios": "^0.27.2",
+    "body-parser": "^1.15.0",
+    "cross-env": "^7.0.3",
+    "config": "^1.20.1",
+    "dotenv": "^16.0.2",
+    "express": "^4.13.4",
+    "express-winston": "^1.4.2",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.11.1",
+    "method-override": "^2.3.5",
+    "mocha-sonarqube-reporter": "^1.0.2",
+    "node-rest-client": "^3.1.1",
+    "newrelic": "10.0.0",
+    "os": "^0.1.2",
+    "util": "^0.10.3",
+    "winston": "^2.2.0",
+    "winston-daily-rotate-file": "^1.1.4",
+    "yargs": "^15.4.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.21.2",
+    "chai": "^4.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "sinon": "^7.5.0",
+    "sinon-chai": "^3.3.0"
+  }
+}
